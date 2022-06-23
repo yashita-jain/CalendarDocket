@@ -4,20 +4,14 @@ import GlobalContext from "../context/GlobalContext";
 import { getMonth } from "../util";
 
 export default function SmallCalendar() {
-  const [currentMonthIdx, setCurrentMonthIdx] = useState(
-    dayjs().month()
-  );
+  const [currentMonthIdx, setCurrentMonthIdx] = useState(dayjs().month());
   const [currentMonth, setCurrentMonth] = useState(getMonth());
   useEffect(() => {
     setCurrentMonth(getMonth(currentMonthIdx));
   }, [currentMonthIdx]);
 
-  const {
-    monthIndex,
-    setSmallCalendarMonth,
-    setDaySelected,
-    daySelected,
-  } = useContext(GlobalContext);
+  const { monthIndex, setSmallCalendarMonth, setDaySelected, daySelected } =
+    useContext(GlobalContext);
 
   useEffect(() => {
     setCurrentMonthIdx(monthIndex);
@@ -46,9 +40,7 @@ export default function SmallCalendar() {
     <div className="mt-9">
       <header className="flex justify-between">
         <p className="text-black font-bold">
-          {dayjs(new Date(dayjs().year(), currentMonthIdx)).format(
-            "MMMM YYYY"
-          )}
+          {dayjs(new Date(dayjs().year(), currentMonthIdx)).format("MMMM YYYY")}
         </p>
         <div>
           <button onClick={handlePrevMonth}>

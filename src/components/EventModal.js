@@ -51,9 +51,7 @@ export default function EventModal() {
     <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
       <form className="bg-white rounded-lg shadow-2xl w-1/4">
         <header className="bg-gray-100 px-4 py-2 flex flex-row-reverse justify-between items-center bg-indigo-300">
-          {/* <span className="material-icons-outlined text-gray-400">
-            drag_handle
-          </span> */}
+        
           <div>
             {selectedEvent && (
               <span
@@ -64,7 +62,7 @@ export default function EventModal() {
                   });
                   setShowEventModal(false);
                 }}
-                className="material-icons-outlined text-gray-400 mr-2 cursor-pointer"
+                className="material-icons-outlined text-red-600 mr-2 cursor-pointer"
               >
                 delete
               </span>
@@ -77,7 +75,6 @@ export default function EventModal() {
           </div>
         </header>
         <div className="p-3">
-          {/* <div className="grid grid-cols-1/5 items-end gap-y-7"> */}
           <div className="">
             <div></div>
             <input
@@ -89,13 +86,9 @@ export default function EventModal() {
               className="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500 my-4"
               onChange={(e) => setTitle(e.target.value)}
             />
-            {/* <span className="material-icons-outlined text-gray-400">
-              schedule
-            </span> */}
+         
             <p className="text-center mt-2 font-semibold">{daySelected.format("dddd, MMMM DD")}</p>
-            {/* <span className="material-icons-outlined text-gray-400">
-              segment
-            </span> */}
+        
             <input
               type="text"
               name="description"
@@ -105,9 +98,7 @@ export default function EventModal() {
               className="pt-3 border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500 my-4"
               onChange={(e) => setDescription(e.target.value)}
             />
-            {/* <span className="material-icons-outlined text-gray-400">
-              bookmark_border
-            </span> */}
+        
             <div className="flex gap-x-2 justify-center mt-2">
               {labelsClasses.map((lblClass, i) => (
                 <span
