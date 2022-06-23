@@ -50,10 +50,10 @@ export default function EventModal() {
   return (
     <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
       <form className="bg-white rounded-lg shadow-2xl w-1/4">
-        <header className="bg-gray-100 px-4 py-2 flex justify-between items-center">
-          <span className="material-icons-outlined text-gray-400">
+        <header className="bg-gray-100 px-4 py-2 flex flex-row-reverse justify-between items-center bg-indigo-300">
+          {/* <span className="material-icons-outlined text-gray-400">
             drag_handle
-          </span>
+          </span> */}
           <div>
             {selectedEvent && (
               <span
@@ -64,20 +64,21 @@ export default function EventModal() {
                   });
                   setShowEventModal(false);
                 }}
-                className="material-icons-outlined text-gray-400 cursor-pointer"
+                className="material-icons-outlined text-gray-400 mr-2 cursor-pointer"
               >
                 delete
               </span>
             )}
             <button onClick={() => setShowEventModal(false)}>
-              <span className="material-icons-outlined text-gray-400">
+              <span className="material-icons-outlined text-black">
                 close
               </span>
             </button>
           </div>
         </header>
         <div className="p-3">
-          <div className="grid grid-cols-1/5 items-end gap-y-7">
+          {/* <div className="grid grid-cols-1/5 items-end gap-y-7"> */}
+          <div className="">
             <div></div>
             <input
               type="text"
@@ -85,29 +86,29 @@ export default function EventModal() {
               placeholder="Add title"
               value={title}
               required
-              className="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500"
+              className="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500 my-4"
               onChange={(e) => setTitle(e.target.value)}
             />
-            <span className="material-icons-outlined text-gray-400">
+            {/* <span className="material-icons-outlined text-gray-400">
               schedule
-            </span>
-            <p>{daySelected.format("dddd, MMMM DD")}</p>
-            <span className="material-icons-outlined text-gray-400">
+            </span> */}
+            <p className="text-center mt-2 font-semibold">{daySelected.format("dddd, MMMM DD")}</p>
+            {/* <span className="material-icons-outlined text-gray-400">
               segment
-            </span>
+            </span> */}
             <input
               type="text"
               name="description"
               placeholder="Add a description"
               value={description}
               required
-              className="pt-3 border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500"
+              className="pt-3 border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500 my-4"
               onChange={(e) => setDescription(e.target.value)}
             />
-            <span className="material-icons-outlined text-gray-400">
+            {/* <span className="material-icons-outlined text-gray-400">
               bookmark_border
-            </span>
-            <div className="flex gap-x-2">
+            </span> */}
+            <div className="flex gap-x-2 justify-center mt-2">
               {labelsClasses.map((lblClass, i) => (
                 <span
                   key={i}
@@ -124,7 +125,7 @@ export default function EventModal() {
             </div>
           </div>
         </div>
-        <footer className="flex justify-end border-t p-3 mt-5">
+        <footer className="flex justify-end border-t p-3 mt-5 bg-slate-400">
           <button
             type="submit"
             onClick={handleSubmit}
